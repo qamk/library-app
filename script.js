@@ -86,19 +86,19 @@ function updateSubsequentDataIndex(row) {
   const startIndex = row.rowIndex - 1;
   const table = row.parentNode;
   let librarySize = mylibrary.length;
-  console.log(`start index: ${startIndex}\n library size: ${librarySize}`)
+  // console.log(`start index: ${startIndex}\n library size: ${librarySize}`)
   for (let i=startIndex; i < librarySize; i++) {
-    console.log(`button class: ${cellChild(table.rows[i], 4, 0)}`);
+    // console.log(`button class: ${cellChild(table.rows[i], 4, 0)}`);
     let buttons = cellChild(table.rows[i], 4, 0);
     let oldIndex = buttons.read.getAttribute('data-index');
     buttons.read.setAttribute('data-index', +oldIndex - 1);
     buttons.remove.setAttribute('data-index', +oldIndex - 1);
-    console.log(`old index: ${oldIndex}\nnew index: ${+oldIndex-1}`);
+    // console.log(`old index: ${oldIndex}\nnew index: ${+oldIndex-1}`);
   }
 }
 
 function cellChild(row, cellIndex, childIndex) {
-  console.log(row)
+  // console.log(row)
   let buttons = { 
     read: row.cells[cellIndex - 1].childNodes[childIndex],
     remove: row.cells[cellIndex].childNodes[childIndex]
