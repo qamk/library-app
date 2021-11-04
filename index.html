@@ -4,9 +4,49 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>Library</title>
 </head>
 <body>
-  
+  <h1>Library app</h1>
+  <p>
+    This app allows you to create a "library" where you can add basic information about books. 
+    This information is then presented in a table.
+  </p>
+
+  <main class="main-display">
+    <button id="toggle_form">Add New Book</button>
+    <div id="form_div">
+      <form action="">
+        <label for="book_title">Title</label>
+        <input type="text" name="title" id="book_title">
+        <label for="book_author">Author</label>
+        <input type="text" name="author" id="book_author">
+        <label for="book_pages">Pages</label>
+        <input type="text" name="pages" id="book_pages">
+        <label>
+          <input type="radio" name="read" value="yes" id="read_true" class="radio" checked>I've read it
+        </label>
+        <label>
+          <input type="radio" name="read" value="no" id="read_false" class="radio">Not yet read it
+        </label>
+        <button type="button" id="new_book">Add a new book!</button>
+      </form>
+    </div>
+    <table>
+      <caption>Your current library</caption>
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col"><abbr title="Number of Pages">Num. Pages</abbr></th>
+          <th scope="col"><abbr title="Already read the book?">Read?</abbr></th>
+          <th scope="col">Remove book</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
 </body>
+<script src="script.js"></script>
 </html>
