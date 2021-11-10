@@ -24,6 +24,17 @@ p {
   margin: 0 auto;
 }
 
+p.form-requirements {
+  font-size: .7rem;
+  padding-bottom: .8em;
+}
+
+p > strong {
+  font-size: 1em;
+  color: #a55;
+  font-weight: 700;
+}
+
 #form_div {
   display: none;
   padding-left: 2.5em;
@@ -45,6 +56,11 @@ p {
 
 #toggle_form, #form_div {
   float: left;
+}
+
+input[type=text]:invalid, input[type=number]:invalid {
+  border: 2px solid #a55;
+  box-shadow: 1px -1px 1px #a99;
 }
 
 input[type=radio]:nth-last-child() {

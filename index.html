@@ -17,20 +17,21 @@
   <main class="main-display">
     <button id="toggle_form">Add New Book</button>
     <div id="form_div">
+      <p class="form-requirements">All fields are <strong>mandatory</strong></p>
       <form action="">
         <label for="book_title">Title</label>
-        <input type="text" name="title" id="book_title">
+        <input type="text" name="title" id="book_title" required>
         <label for="book_author">Author</label>
-        <input type="text" name="author" id="book_author">
+        <input type="text" name="author" id="book_author" required>
         <label for="book_pages">Pages</label>
-        <input type="text" name="pages" id="book_pages">
+        <input type="number" name="pages" id="book_pages" required min="0">
         <label>
           <input type="radio" name="read" value="yes" id="read_true" class="radio" checked>I've read it
         </label>
         <label>
           <input type="radio" name="read" value="no" id="read_false" class="radio">Not yet read it
         </label>
-        <button type="button" id="new_book">Add a new book!</button>
+        <button type="submit" id="new_book">Add a new book!</button>
       </form>
     </div>
     <table>
