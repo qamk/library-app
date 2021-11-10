@@ -39,8 +39,19 @@ class Book {
 //     return this.title + ' is written by ' + this.author + ', ' + numPages + '. ' + readText;
 // }
 
+const invalidInput = () => {
+  const formElements = [title, author, numPages, read];
+
+  const valid = formElements.every( (element) => {
+    element.checkValidity();
+  } )  
+
+  return valid;
+}
+
 
 function addBookToLibrary() {
+  if (invalidInput) { return }
   let mybook = new Book();
   mybook.title = title.value;
   mybook.author = author.value;
