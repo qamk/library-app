@@ -7,27 +7,38 @@ const toggleFormButton = document.getElementById("toggle_form");
 const submitButton = document.getElementById("new_book");
 const table = document.getElementsByTagName("table")[0];
 
-// Book constructor
-function Book(title, author, numPages, read) {
-  this.title = title;
-  this.author = author;
-  this.numPages = numPages;
-  this.read = read;
+// Book class
+class Book {
+  title; author; numPages; read;
+  constructor(title, author, numPages, read) {
+    this.title = title;
+    this.author = author;
+    this.numPages = numPages;
+    this.read = read;
+  }
+
+  info = () => {
+
+  }
+
+  set read(value) {
+    this.read = read;
+  }
+
 }
 
-Book.prototype.info = function () {
-  let readText =
-    this.read == "Read" ? "You have read this book" : "Book not yet read";
-  return (
-    this.title +
-    " is written by " +
-    this.author +
-    ", " +
-    numPages +
-    ". " +
-    readText
-  );
-};
+// function Book(title, author, numPages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.numPages = numPages;
+//   this.read = read;
+// }
+
+// Book.prototype.info = function () {
+//     let readText = (this.read == 'Read') ? 'You have read this book' : 'Book not yet read';
+//     return this.title + ' is written by ' + this.author + ', ' + numPages + '. ' + readText;
+// }
+
 
 function addBookToLibrary() {
   let mybook = new Book();
